@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Primera prueba</string>
+    <string name="app_name">IMC APP</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="age">Edad</string>
+    <string name="desc_plus_button">Botón para aumentar el peso</string>
+    <string name="desc_sub_button">Botón para restar el peso</string>
+    <string name="desc_slider_height">Selector de altura</string>
+    <string name="default_height">120 cm</string>
+    <string name="desc_ic_male">Icono de género masculino</string>
+    <string name="desc_ic_female">Icono de género femenino</string>
+    <string name="calculate">Calcular</string>
 </resources>

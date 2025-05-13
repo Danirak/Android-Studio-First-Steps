@@ -103,14 +103,30 @@
     android:layout_height="match_parent"
     tools:context=".firstapp.FirstAppActivity">
 
+    <TextView
+        android:id="@+id/textoBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escribe tu nombre"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp"
+        />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:layout_marginBottom="32dp"
         android:singleLine="true"
         android:maxLines="1"
         app:layout_constraintBottom_toTopOf="@id/btnStart"
+        android:hint="Ingresa tu nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

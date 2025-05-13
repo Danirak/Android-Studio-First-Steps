@@ -1,5 +1,6 @@
 package com.example.primeraprueba.firstapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -24,7 +25,14 @@ class FirstAppActivity : AppCompatActivity() {
 
         val btnStart = findViewById<AppCompatButton>(R.id.btnStart)
         btnStart.setOnClickListener {
-            Log.i("Devss", "${etName.text.toString()}")
+            val name = etName.text.toString()
+            if(name.isNotEmpty()){
+
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("EXTRA_NAME",name)//para enviar variables extras
+
+                startActivity(intent)
+            }
         }
     }
 }
