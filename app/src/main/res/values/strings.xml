@@ -1,4 +1,6 @@
 <resources>
+
+    <!-- IMCApp -->
     <string name="app_name">IMC APP</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
@@ -12,4 +14,20 @@
     <string name="desc_ic_male">Icono de género masculino</string>
     <string name="desc_ic_female">Icono de género femenino</string>
     <string name="calculate">Calcular</string>
+    <string name="result">Tu resultado</string>
+    <string name="recalculate">Re-calcular</string>
+    <string name="error">Error</string>
+    <string name="tittle_bajo_peso">Bajo peso</string>
+    <string name="description_bajo_peso">Estas por debajo de lo óptimo para tu peso y altura</string>
+    <string name="tittle_peso_normal">Peso normal</string>
+    <string name="description_peso_normal">Estas en lo óptimo para tu peso y altura</string>
+    <string name="tittle_sobrepeso">Sobrepeso</string>
+    <string name="description_sobrepeso_peso">Estas por encima de lo óptimo para tu peso y altura</string>
+    <string name="tittle_obesidad">Obesidad</string>
+    <string name="description_obesidad">Estas por muy por encima de lo óptimo para tu peso y altura</string>
+
+    <!-- TodoApp -->
+    <string name="todo_title">Bienvenido!</string>
+    <string name="todo_categories">Categorias</string>
+
 </resources>

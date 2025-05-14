@@ -1,13 +1,12 @@
 package com.example.primeraprueba.imcalculator
 
+import android.content.Intent
 import android.icu.text.DecimalFormat
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
@@ -45,6 +44,9 @@ class ImcCalculatorActivity : AppCompatActivity() {
     //BtnCalcular
     private lateinit var btnCalculate: Button
 
+    companion object {
+        const val IMC_KEY = "IMC_RESULT"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,7 +98,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         rsHeight.addOnChangeListener { _, value, _ ->
             val df = DecimalFormat("#.##")
             currentHeight = df.format(value).toInt()
-            tvHeight.text = "$currentHeight cm"
+            this.tvHeight.text = "$currentHeight cm"
         }
         btnSubWeight.setOnClickListener {
             currentWeight -= 1
@@ -115,15 +117,21 @@ class ImcCalculatorActivity : AppCompatActivity() {
             setAge()
         }
         btnCalculate.setOnClickListener {
-            calculateIMC()
+            val result = calculateIMC()
+            navigateToResult(result)
         }
     }
 
-    private fun calculateIMC() {
+    private fun navigateToResult(result: Double) {
+        val intent = Intent(this, ResultIMCActivity::class.java)
+        intent.putExtra(IMC_KEY, result)
+        startActivity(intent)
+    }
+
+    private fun calculateIMC(): Double {
         val df = DecimalFormat("#.##")
-        val imc = currentWeight*10000 / (currentHeight.toDouble() * currentHeight.toDouble())
-        val result = df.format(imc).toDouble()
-        Log.i("calculo","El imc es $result")
+        val imc = currentWeight * 10000 / (currentHeight.toDouble() * currentHeight.toDouble())
+        return df.format(imc).toDouble()
     }
 
     private fun setWeight() {
